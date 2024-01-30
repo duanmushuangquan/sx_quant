@@ -1,0 +1,2 @@
+python ptq.py --weights /datav/121BEVFusion/shouxieai/bevfusion_02hero/workspace/13Explain_Quant/test/yolov5/yolov5s.pt \
+--cocodir /dataset/coco2017  --ptq_summary pytorch_quantization_ptq_summary3.json --save_ptq False --eval_ptq --eval_origin
