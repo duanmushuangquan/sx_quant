@@ -96,3 +96,26 @@ with torch.no_grad():
 #  Set the export switch to False
 Linker(model).do_export = False
 ```
+
+
+# Precision comparison test
+### test info
+![测试结果](img/test_info.png)
+
+
+### result
+- mAP drops, sx_quant is generally consistent with Pytorch_quantization, and sx_quant sometimes performs better than Pytorch_quantization.
+
+- In the Collect process, sx_quant **speeds up** by approximately 33.46% to 45.77%.
+
+- sx_quant shows significant improvement in the Post Compute process.
+
+- Based on the sensitivity layer analysis results, disabling quantization for the detect layer leads to a 0.4% accuracy improvement.
+
+- For Pytorch_quantization, it is necessary to set _calibrator._torch_hist = True to improve calibration speed.
+
+![测试结果](img/result.png)
+
+
+For more detailed information, please visit
+https://ga147pf9lwe.feishu.cn/docx/NAaNdFm4JoOSuYx67bZc3u07nIc?from=from_copylink
